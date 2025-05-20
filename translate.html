@@ -1,0 +1,61 @@
+<!-- translate.html --><!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>日本語翻訳サービス | PC Daimaou Group</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #111; color: #eee; }
+    header, footer { text-align: center; padding: 1em; background: #1e1e1e; }
+    nav { position: absolute; top: 1em; right: 1em; cursor: pointer; }
+    nav div { width: 25px; height: 3px; background: #eee; margin: 5px; transition: all 0.3s; }
+    .menu { display: none; position: absolute; top: 3em; right: 1em; background: #333; border-radius: 0.5em; overflow: hidden; }
+    .menu a { display: block; padding: 0.8em 1.5em; text-decoration: none; color: #fff; }
+    .menu a:hover { background: #555; }
+    .logo { display: block; margin: 0 auto; width: 150px; }
+    main { padding: 2em; animation: fadeIn 1.5s ease; }
+    .section { max-width: 900px; margin: auto; background: #1c1c1c; padding: 2em; border-radius: 1em; box-shadow: 0 0 15px #333; animation: slideIn 1s ease; }
+    h1, h2 { text-align: center; }
+    .btn { display: inline-block; padding: 0.7em 1.5em; margin-top: 1em; background: #2196F3; color: white; text-decoration: none; border-radius: 0.5em; transition: background 0.3s; }
+    .btn:hover { background: #1976D2; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideIn { from { transform: translateX(-20px); opacity: 0; } to { transform: none; opacity: 1; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="logo.png" alt="PC Daimaou Group" class="logo"></a>
+    <nav onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </nav>
+    <div class="menu" id="menu">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">会社紹介</a>
+      <a href="applock.html">アプリ制限ソフト</a>
+      <a href="translate.html">日本語翻訳サービス</a>
+      <a href="status.html">サービス稼働状況</a>
+    </div>
+  </header>
+  <main>
+    <h1>日本語翻訳サービス</h1>
+    <div class="section">
+      <h2>音声認識を活用した文法校正</h2>
+      <p>「変な日本語翻訳サービス」は、日本語が苦手な方とのスムーズなコミュニケーションを支援する音声翻訳システムです。</p>
+      <ul>
+        <li>音声認識による即時翻訳</li>
+        <li>文法がおかしい日本語に対応</li>
+        <li>Web上で手軽に使用可能</li>
+      </ul>
+      <a href="https://maigotaisakuservice-spport-of-pcking.github.io/onseininshiki/" class="btn">サービスページへ</a>
+    </div>
+  </main>
+  <footer>
+    ©2025 PC Daimaou Group<br>All rights reserved.
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
