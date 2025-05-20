@@ -1,0 +1,73 @@
+<!-- status.html -->
+<!DOCTYPE html><html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サービス稼働状況 | PC Daimaou Group</title>
+  <style>
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: linear-gradient(to right, #141e30, #243b55); color: #fff; }
+    header, footer { text-align: center; padding: 1em; background: rgba(0,0,0,0.6); }
+    nav { position: absolute; top: 1em; right: 1em; cursor: pointer; }
+    nav div { width: 25px; height: 3px; background: #fff; margin: 5px; transition: all 0.3s; }
+    .menu { display: none; position: absolute; top: 3em; right: 1em; background: rgba(255,255,255,0.1); border-radius: 0.5em; overflow: hidden; }
+    .menu a { display: block; padding: 0.8em 1.5em; text-decoration: none; color: #fff; }
+    .menu a:hover { background: rgba(255,255,255,0.2); }
+    .logo { display: block; margin: 0 auto; width: 150px; }
+    main { padding: 2em; text-align: center; }
+    .status-box { background: rgba(0,0,0,0.4); border-radius: 1em; margin: 2em auto; padding: 2em; max-width: 600px; box-shadow: 0 0 20px rgba(0,0,0,0.5); animation: fadeIn 1s ease; }
+    button { padding: 0.7em 1.5em; margin: 1em; border: none; border-radius: 0.5em; background: #00c6ff; color: #000; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+    button:hover { background: #0072ff; color: #fff; }
+    .result { margin-top: 1em; font-size: 1.2em; }
+    .online { color: #00ffcc; }
+    .offline { color: #ff6666; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html"><img src="logo.png" alt="PC Daimaou Group" class="logo"></a>
+    <nav onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </nav>
+    <div class="menu" id="menu">
+      <a href="index.html">ホーム</a>
+      <a href="about.html">会社紹介</a>
+      <a href="applock.html">アプリ制限ソフト</a>
+      <a href="translate.html">日本語翻訳サービス</a>
+      <a href="status.html">サービス稼働状況</a>
+    </div>
+  </header>
+  <main>
+    <h1>サービス稼働状況</h1>
+    <div class="status-box">
+      <h2>アプリ制限ソフト</h2>
+      <button onclick="checkStatus('https://komefura.com/download/sysappfilter/index.php', 'appResult')">ステータス確認</button>
+      <div class="result" id="appResult">未確認</div>
+    </div>
+    <div class="status-box">
+      <h2>日本語翻訳サービス</h2>
+      <button onclick="checkStatus('https://maigotaisakuservice-spport-of-pcking.github.io/onseininshiki/', 'transResult')">ステータス確認</button>
+      <div class="result" id="transResult">未確認</div>
+    </div>
+  </main>
+  <footer>
+    ©2025 PC Daimaou Group<br>All rights reserved.
+  </footer>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+    async function checkStatus(url, resultId) {
+      const result = document.getElementById(resultId);
+      result.textContent = '確認中...';
+      try {
+        const res = await fetch(url, { method: 'HEAD', mode: 'no-cors' });
+        result.innerHTML = '<span class="online">● 稼働中</span>';
+      } catch (e) {
+        result.innerHTML = '<span class="offline">● 停止中 または アクセス不可</span>';
+      }
+    }
+  </script>
+</body>
+</html>
