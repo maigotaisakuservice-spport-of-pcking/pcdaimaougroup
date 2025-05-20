@@ -1,47 +1,5 @@
-<!-- 共通スタイルとスクリプトを含む：styleとscriptは全ページに同じ --><!-- index.html --><!DOCTYPE html><html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PC Daimaou Group</title>
-  <style>
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: #121212; color: #fff; }
-    header, footer { text-align: center; padding: 1em; background: #1f1f1f; }
-    nav { position: absolute; top: 1em; right: 1em; cursor: pointer; }
-    nav div { width: 25px; height: 3px; background: #fff; margin: 5px; transition: all 0.3s; }
-    .menu { display: none; position: absolute; top: 3em; right: 1em; background: #333; border-radius: 0.5em; overflow: hidden; }
-    .menu a { display: block; padding: 0.8em 1.5em; text-decoration: none; color: #fff; }
-    .menu a:hover { background: #555; }
-    .logo { display: block; margin: 0 auto; width: 150px; }
-    main { padding: 2em; text-align: center; animation: fadeIn 2s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-  </style>
-</head>
-<body>
-  <header>
-    <a href="index.html"><img src="logo.png" alt="PC Daimaou Group" class="logo" /></a>
-    <nav onclick="toggleMenu()">
-      <div></div><div></div><div></div>
-    </nav>
-    <div class="menu" id="menu">
-      <a href="index.html">ホーム</a>
-      <a href="about.html">会社紹介</a>
-      <a href="applock.html">アプリ制限ソフト</a>
-      <a href="translate.html">日本語翻訳サービス</a>
-      <a href="status.html">サービス稼働状況</a>
-    </div>
-  </header>
-  <main>
-    <h1>ようこそ、PC Daimaou Group へ</h1>
-    <p>革新的なITサービスであなたの生活を支えます。</p>
-  </main>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
-</body>
-</html><!-- about.html --><!DOCTYPE html><html lang="ja">
+<!DOCTYPE html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
