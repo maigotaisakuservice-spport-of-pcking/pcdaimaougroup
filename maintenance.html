@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>アクセスが集中しています</title>
+  <title>メンテナンス中です</title>
   <style>
     body {
       background: linear-gradient(to top, #000428, #004e92);
@@ -45,7 +45,24 @@
 </head>
 <body>
   <div class="spinner"></div>
-  <h1>アクセスが集中しています</h1>
-  <p>アクセス制限解除までしばらくお待ちください</p>
+  <h1>メンテナンスを行っております</h1>
+  <p>サービスメンテナンス終了までしばらくお待ちください</p>
 </body>
+<script>
+   (function () {
+    const now = new Date();
+    const day = now.getDay(); // 0:日, 1:月, ..., 5:金, 6:土
+    const hour = now.getHours(); // 0〜23
+
+    const isFriday = (day === 5);
+    const isLateNight = (hour >= 22 || hour < 4);
+
+    // 金曜かつ22:00〜翌4:00の間「以外」の時間に実行
+    const shouldRedirectToIndex = !(isFriday && isLateNight);
+
+    if (shouldRedirectToIndex) {
+      window.location.href = "index.html";
+    }
+  })();
+</script>  
 </html>
