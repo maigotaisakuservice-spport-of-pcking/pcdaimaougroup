@@ -42,6 +42,15 @@
       const menu = document.getElementById('menu');
       menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     }
+
+    //ロボット認証確認
+    window.onload = function() {
+    const robotStatus = localStorage.getItem("robotOK");
+    if (robotStatus !== "true") {
+      window.location.href = "wait.html";
+    }
+  };
+
   </script>
 </body>
 </html>
