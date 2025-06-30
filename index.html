@@ -51,6 +51,20 @@
     }
   };
 
+    //メンテナンスという名の待機ページ
+    (function () {
+    const now = new Date();
+
+    const day = now.getDay(); // 0:日, 1:月, ..., 5:金, 6:土
+    const hour = now.getHours(); // 0〜23
+
+    const isFriday = (day === 5);
+    const isLateNight = (hour >= 22 || hour < 4);
+
+    if (isFriday && isLateNight) {
+      window.location.href = maintenance.html"; // 転送先ページ
+    }
+  })();
   </script>
 </body>
 </html>
