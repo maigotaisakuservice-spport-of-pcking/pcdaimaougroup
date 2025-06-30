@@ -92,6 +92,7 @@
       if (check.checked) {
         // 認証成功時に次のページに遷移
         window.location.href = "wait.html";
+        localStorage.setItem("robotOK", "true");
       } else {
         alert("ロボットではないことを確認してください。");
       }
